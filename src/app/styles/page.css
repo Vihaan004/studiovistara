@@ -1,0 +1,56 @@
+/* Home page specific styles */
+
+.header {
+  /* position: fixed; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 40px 50px;
+}
+
+.studiovistara {
+  font-family: var(--font-roboto-mono), monospace;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  cursor: default;
+  display: inline-block;
+}
+
+.contact {
+    font-family: var(--font-roboto-mono), monospace;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.tagline {
+  font-family: var(--font-roboto-mono), monospace;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+  
+  .studiovistara {
+    font-size: 20px;
+  }
+}
