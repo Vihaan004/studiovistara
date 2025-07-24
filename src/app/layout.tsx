@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Roboto_Mono } from "next/font/google";
-import "./globals.css";
+import { Roboto } from "next/font/google";
+import "./styles/globals.css";
 
-const robotMono = Roboto_Mono({
-  variable: "--font-roboto-mono",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  weight: ["100", "300", "400", "500", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -20,8 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/mcs5aof.css" />
+      </head>
       <body
-        className={`${robotMono.variable} antialiased`}
+        className={`${roboto.variable} antialiased`}
       >
         {children}
       </body>

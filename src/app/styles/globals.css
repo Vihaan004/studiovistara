@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --font-roboto: 'Roboto', sans-serif;
+  --font-dharma-gothic-e: "dharma-gothic-e", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-roboto), sans-serif;
+  /* color: #323334; */
+  line-height: 1.6;
+  min-height: 100vh; 
+}
