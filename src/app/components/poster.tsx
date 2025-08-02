@@ -1,21 +1,32 @@
 import '../styles/poster.css';
 
-export default function Home() {
+export default function Poster() {
   return (
     <div className="poster-container">
-        <video className="background-video" autoPlay muted loop playsInline>
+        {/* <video className="background-video" autoPlay muted loop playsInline>
             <source src="/videos/Poster-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-        </video>
+        </video> */}
+        <img
+            className="background-image"
+            src="/images/titlecard.jpeg"
+            alt="Studio Vistara Title Card Background"
+            style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                zIndex: -10,
+                pointerEvents: 'none',
+                filter: 'brightness(0.5)',
+            }}
+        />
         <div className='title'>
             studiovistara
         </div>
         <div className='subtitle'>
-            <div>
-                <p>ARCHITECTS</p>
-                <p>DESIGNERS</p>
-                <p>PLANNERS</p>
-            </div>
             <div>
                 <p>TEJAS PATEL</p>
                 <p>MONA PATEL</p>
@@ -23,9 +34,11 @@ export default function Home() {
         </div>
         <div className='info'>
             {/* <p>SITE & CONTEXT EVALUATION • SPACE PROGRAMMING • DESIGN DEVELOPMENT • WORKING DRAWINGS & SPECIFICATIONS • DIGITAL 3D MODELING & SIMULATIONS • LANDSCAPE DESIGN • PROCESS ASSESSMENT • WORK SCHEDULING • COST ESTIMATION • PROJECT DELIVERY & COORDINATION • CONSTRUCTION • SITE SUPERVISION • DRAWINGS & SPECIFICATIONS • SERVICE STRUCTURE & MAINTENANCE GUIDELINES</p> */}
-            <p>SB-20, 'PRODUCTIVITY HOUSE' PRODUCTIVITY ROAD, ALKAPURI, BARODA 390007</p>
+            {/* <p>SB-20, 'PRODUCTIVITY HOUSE' PRODUCTIVITY ROAD, ALKAPURI, BARODA 390007</p>
             <p>+91 0265 2359293 • +91 972979136</p>
-            <p>info@studiovistara.com</p>
+            <p>info@studiovistara.com</p> */}
+            <h2 className='architecture'>ARCHITECTURE</h2>
+            <p>BUILDING | INTERIOR | LANDSCAPE</p>
             <div className="social-links">
                 <a href="https://www.facebook.com/people/Studiovistara/100054393212997/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
@@ -35,6 +48,9 @@ export default function Home() {
                 </a>
                 <a href="https://maps.app.goo.gl/FtcVmdCYBzroByg49" target="_blank" rel="noopener noreferrer" aria-label="Google Maps">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/tejas-patel-a9245310/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"></svg>
                 </a>
             </div>
         </div>

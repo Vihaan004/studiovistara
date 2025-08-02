@@ -15,5 +15,6 @@ body {
   font-family: var(--font-roboto), sans-serif;
   /* color: #323334; */
   line-height: 1.6;
-  min-height: 100vh; 
+  min-height: 100vh;
+  background-color: white;
 }

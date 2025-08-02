@@ -1,0 +1,133 @@
+.categories-section {
+    background-color: white;
+    height: 600px;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 50px;
+}
+
+.categories-container {
+    display: flex;
+    flex-direction: row;
+
+    height: 350px;
+    /* background-color: red; */
+    width: 1200px;
+}
+
+.col-1 {
+    width: 70%;
+}
+
+.col-2 {
+    width: 30%;
+    text-align: center;
+}
+
+.col-1-row-1 {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/poster.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.col-1-row-1:hover {
+    filter: grayscale(0%);
+}
+
+.col-1-row-2 {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+}
+
+.col-1-row-2-col-1 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/sample (2).jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.col-1-row-2-col-1:hover {
+    filter: grayscale(0%);
+}
+
+.col-1-row-2-col-2 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/sample (1).jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.col-1-row-2-col-2:hover {
+    filter: grayscale(0%);
+}
+
+.col-2 {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/poster-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.col-2:hover {
+    filter: grayscale(0%);
+}
+
+.tag {
+    height: 50px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 10px 20px;
+    white-space: nowrap;
+    letter-spacing: 3px;
+}
+
+.list{
+    height: 700px;
+    width: 100px;
+    position: absolute;
+    right: 280;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 50px 20px;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: right;
+    color: white;
+}

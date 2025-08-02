@@ -7,21 +7,22 @@
   height: 100vh;
   display: flex;
   pointer-events: none;
-  z-index: -1;
+  z-index: 1;
   padding: 0 50px; /* 50px margin on left and right */
   box-sizing: border-box;
 }
 
 .stripes-content {
+  background-color: white;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   width: 100%;
   min-height: 100vh;
 }
 
 /* Ensure stripes maintain fixed size regardless of zoom */
 .stripe {
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid #5555551a;
   min-height: 100vh;
   position: relative;
   flex-shrink: 0;
@@ -30,5 +31,5 @@
 
 /* Add left border only to the first stripe */
 .stripe:first-child {
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid #5555551a;
 }
