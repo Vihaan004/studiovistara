@@ -3,7 +3,15 @@ import '../styles/categories.css';
 export default function Categories() {
   return (
     <div className='categories-section'>
-      <div className='categories-container'>
+      
+        <div className='options'>
+            <p>PROJECTS</p>
+            <p>THE TEAM</p>
+            <p>BLOG</p>
+            <p>TESTIMONIALS</p>
+            <p>CONTACT</p>
+        </div>
+      {/* <div className='categories-container'>
         <div className='col-1'>
           <div className='col-1-row-1'>
             <div className='tag'>
@@ -28,7 +36,9 @@ export default function Categories() {
             HOMES
           </div>
         </div>
-      </div>
+      </div> */}
+
+
         
     </div>
   );
