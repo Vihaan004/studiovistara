@@ -11,6 +11,17 @@
   margin: 0;
 }
 
+/* Custom text selection colors for black and white theme */
+::selection {
+  background: black;
+  color: white;
+}
+
+::-moz-selection {
+  background: black;
+  color: white;
+}
+
 body {
   font-family: var(--font-roboto), sans-serif;
   /* color: #323334; */

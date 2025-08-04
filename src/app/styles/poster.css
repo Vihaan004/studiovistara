@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     /* height: 40vh; */
-    height: 360px;
+    height: 225px;
     overflow: hidden;
 }
 
@@ -22,15 +22,15 @@
     /* filter: blur(0.4px); */
     position: absolute;
     top: 30;
-    left: 100;
-    height: 300px;
+    left: 60;
+    height: 150px;
     width: 330px;
     border-bottom: 10px solid white;
     border-right: 10px solid white;
     color: white;
     font-size: 2rem;
     letter-spacing: 2px;
-    /* font-family: var(--font-dharma-gothic-e); */
+    font-family: 'Corbel', sans-serif;
     font-weight: 300;
     font-style: normal;
     display: flex;
@@ -42,12 +42,12 @@
     opacity: 0.8;
     /* filter: blur(0.4px); */
     position: absolute;
-    top: 0;
-    left: 400px;
+    top: 50;
+    left: 450px;
     width: auto;
-    height: 300px;
-    padding-left: 50px;
-    padding-top: 70px;
+    /* height: 300px; */
+    /* padding-left: 50px;
+    padding-top: 70px; */
     color: white;
     font-size: 0.95rem;
     letter-spacing: 2px;
@@ -61,6 +61,28 @@
     margin: 2px 0;
 }
 
+.about {
+    position: absolute;
+    top: 190px;
+    left: 285px;
+    /* width: 300px; */
+    /* padding: 20px; */
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+    /* padding-bottom: 2px; */
+}
+
+.about:hover {
+    border-bottom: 2px solid white;
+}
+
+
+
 .info {
     /* opacity: 0.8; */
     /* filter: blur(0.4px); */
@@ -73,7 +95,7 @@
     padding: 0 0px 10px 0px;
     color: white;
     font-size: 0.85rem;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-weight: 400;
     text-align: left;
     display: flex;
@@ -81,16 +103,20 @@
     /* gap: 10px; */
 }
 
-.info * {
-    margin: 2px 0;
-}
-
 .architecture {
-    text-align: left;
+    text-align: center;
     font-size: 2rem;
     letter-spacing: 8px;
     padding-bottom: 0;
     margin-bottom: 0;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-top: 0;
 }
 
 .social-links {
@@ -99,5 +125,5 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 12px;
 }
