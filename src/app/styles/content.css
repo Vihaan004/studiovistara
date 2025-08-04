@@ -1,6 +1,6 @@
 .content-section {
     background-color: white;
-    height: calc(100vh - 225px);
+    height: calc(100vh - 200px);
     z-index: -1;
     display: flex;
     flex-direction: column;
@@ -50,7 +50,30 @@
     height: 100%;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 0px 50px 50px;
+    padding: 50px 0 25px 50px;
+}
+
+.content-col-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    width: 70%;
+}
+
+.preview {
+    border: 1px solid black;
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.corner {
+    border-bottom: 20px solid black;
+    border-right: 10px solid black;
+    height: 200px;
+    width: 626px;
+    /* position: absolute; */
 }
 
 .quote {
@@ -75,7 +98,7 @@
 }
 
 .orange-text {
-    padding-left: 4px;
+    padding-left: 2px;
     color: rgba(0, 0, 0, 0.7);
     transition: color 0.3s ease;
 }
@@ -100,6 +123,7 @@
     height: fit-content;
     width: 330px;
     padding-bottom: 30px;
+    margin-bottom: 71px;
     display: flex;
     flex-direction: column;
     gap: 10px;

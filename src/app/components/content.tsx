@@ -4,19 +4,28 @@ export default function Content() {
   return (
     <div className='content-section'>
       
-        <div className='navbar'>
+        {/* <div className='navbar'>
             <p>THE TEAM</p>
             <p>PROJECTS</p>
             <p>BLOG</p>
             <p>TESTIMONIALS</p>
             <p>CONTACT</p>
-        </div>
+        </div> */}
 
         <div className='content-1'>
-            <div className='quote'>
-                <p>Society needs a good image of itself. That is the job of the Architect.</p>
-                <p className='author'>— Walter Gropius</p>
+            <div className='content-col-1'>
+                {/* <div className='preview'>
+
+                </div> */}
+                <div className='corner'>
+
+                </div>
+                <div className='quote'>
+                    <p>Society needs a good image of itself. That is the job of the Architect.</p>
+                    <p className='author'>— Walter Gropius</p>
+                </div>
             </div>
+            
             <div className='subsidiaries'>
                 <div className='dot'></div>
                 <h1>associated verticals</h1>
