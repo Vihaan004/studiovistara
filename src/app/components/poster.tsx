@@ -12,24 +12,12 @@ interface PosterProps {
 
 export default function Poster({ isTransitioning = false }: PosterProps) {
   const [shouldTransition, setShouldTransition] = useState(false);
-  const [backgroundImagePath, setBackgroundImagePath] = useState('');
   const { navigateWithTransition } = useTransition();
   const pathname = usePathname();
   const router = useRouter();
   
   // Check if we're on the home page using utility function
   const isHomePage = isHomePageUtil(pathname);
-
-  // Set background image path on mount and when pathname changes
-  useEffect(() => {
-    // Small delay to ensure DOM is ready and path resolution is correct
-    const timer = setTimeout(() => {
-      const imagePath = getAssetPath('/images/titlecard.jpeg');
-      setBackgroundImagePath(imagePath);
-    }, 100);
-    
-    return () => clearTimeout(timer);
-  }, [pathname]);
 
   useEffect(() => {
     if (isTransitioning) {
@@ -73,7 +61,7 @@ export default function Poster({ isTransitioning = false }: PosterProps) {
         <div 
           className={`poster-container poster-bg ${shouldShowShrunk ? 'shrunk' : ''}`}
           style={{
-            backgroundImage: backgroundImagePath ? `url('${backgroundImagePath}')` : 'none'
+            backgroundImage: `url('${getAssetPath('/images/titlecard.jpeg')}')`
           }}
         >
         {/* <video className="background-video" autoPlay muted loop playsInline>
