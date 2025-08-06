@@ -1,16 +1,20 @@
 import '../styles/home.css';
 
-export default function Home() {
+interface HomeProps {
+  isTransitioning?: boolean;
+}
+
+export default function Home({ isTransitioning = false }: HomeProps) {
   return (
     <div className='home-section'>
 
         <div className='home-1'>
-            <div className='quote'>
+            <div className={`quote ${isTransitioning ? 'hidden' : ''}`}>
                 <p>Society needs a good image of itself. That is the job of the Architect.</p>
                 <p className='author'>— Walter Gropius</p>
             </div>
-            <div className='subsidiaries'>
-                <div className='dot'></div>
+            <div className={`subsidiaries ${isTransitioning ? 'hidden' : ''}`}>
+                <div className={`dot ${isTransitioning ? 'hidden' : ''}`}></div>
                 <h1>associated verticals</h1>
                 <p>STUDIO<span className='orange-text'>WORX</span></p>
                 <p>STUDIO<span className='orange-text'>ESTATES</span></p>

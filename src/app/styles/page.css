@@ -1,6 +1,14 @@
 /* Home page specific styles */
 
-.header {
+/* General page content styling */
+.page-content {
+    background-color: white;
+    min-height: calc(100vh - 175px);
+    padding: 0 30px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}.header {
   /* position: fixed; */
   display: flex;
   align-items: center;

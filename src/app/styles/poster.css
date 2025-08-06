@@ -1,5 +1,10 @@
  .poster-main {
-    height: 285px
+    height: 285px;
+    transition: height 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+ }
+
+ .poster-main.transitioning {
+    height: 175px;
  }
  
  .poster-container {
@@ -13,7 +18,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    transition: padding 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
     /* align-items: center; */
+}
+
+.poster-container.shrunk {
+    padding: 15px 30px 20px 30px;
 }
 
 .poster-bg {
@@ -64,6 +74,17 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    transition: height 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.title:hover {
+    opacity: 0.8;
+}
+
+.title.shrunk {
+    height: 85px;
 }
 
 .subtitle {
@@ -101,9 +122,15 @@
     letter-spacing: 2px;
     font-weight: 400;
     cursor: pointer;
-    transition: border-bottom 0.3s ease;
+    transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1), 
+                opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
     border-bottom: 2px solid transparent;
     /* padding-bottom: 2px; */
+}
+
+.about.hidden {
+    transform: translateY(-100px);
+    opacity: 0;
 }
 
 .about:hover {
@@ -118,7 +145,7 @@
     /* position: absolute;
     bottom: 10;
     right: 30; */
-    /* width: 400px; */
+    width: 324px;
     /* border-bottom: 30px solid white; */
     z-index: 1;
     border-top: 20px solid white;
@@ -130,7 +157,14 @@
     text-align: left;
     display: flex;
     flex-direction: column;
+    transition: border-top 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                padding 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
     /* gap: 10px; */
+}
+
+.info.compact {
+    /* border-top: 10px solid white; */
+    padding: 0 0px 5px 0px;
 }
 
 .architecture {
@@ -139,6 +173,13 @@
     letter-spacing: 8px;
     padding-bottom: 0;
     margin-bottom: 0;
+    transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.architecture.hidden {
+    transform: translateY(-50px);
+    opacity: 0;
 }
 
 .tags {
@@ -147,6 +188,13 @@
     justify-content: space-between;
     font-size: 0.9rem;
     margin-top: 0;
+    transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.tags.hidden {
+    transform: translateY(-50px);
+    opacity: 0;
 }
 
 .social-links {
@@ -156,6 +204,11 @@
     align-items: center;
     width: 100%;
     margin-top: 12px;
+    transition: margin-top 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.info.compact .social-links {
+    margin-top: 0;
 }
 
 .navbar {

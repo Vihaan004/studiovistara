@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, IBM_Plex_Serif } from "next/font/google";
 import "./styles/globals.css";
+import { TransitionProvider } from "./contexts/TransitionContext";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -70,7 +71,9 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${ibmPlexSerif.variable} antialiased`}
       >
-        {children}
+        <TransitionProvider>
+          {children}
+        </TransitionProvider>
       </body>
     </html>
   );
