@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto, IBM_Plex_Serif } from "next/font/google";
 import "./styles/globals.css";
 import { TransitionProvider } from "./contexts/TransitionContext";
+import { getAssetPath } from "./utils/paths";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -32,37 +33,37 @@ export default function RootLayout({
         <style>{`
           @font-face {
             font-family: 'Corbel';
-            src: url('/fonts/Corbel/corbel.ttf') format('truetype');
+            src: url('${getAssetPath('/fonts/Corbel/corbel.ttf')}') format('truetype');
             font-weight: 400;
             font-style: normal;
           }
           @font-face {
             font-family: 'Corbel';
-            src: url('/fonts/Corbel/corbell.ttf') format('truetype');
+            src: url('${getAssetPath('/fonts/Corbel/corbell.ttf')}') format('truetype');
             font-weight: 300;
             font-style: normal;
           }
           @font-face {
             font-family: 'Corbel';
-            src: url('/fonts/Corbel/corbelb.ttf') format('truetype');
+            src: url('${getAssetPath('/fonts/Corbel/corbelb.ttf')}') format('truetype');
             font-weight: 700;
             font-style: normal;
           }
           @font-face {
             font-family: 'Corbel';
-            src: url('/fonts/Corbel/corbeli.ttf') format('truetype');
+            src: url('${getAssetPath('/fonts/Corbel/corbeli.ttf')}') format('truetype');
             font-weight: 400;
             font-style: italic;
           }
           @font-face {
             font-family: 'Corbel';
-            src: url('/fonts/Corbel/corbelli.ttf') format('truetype');
+            src: url('${getAssetPath('/fonts/Corbel/corbelli.ttf')}') format('truetype');
             font-weight: 300;
             font-style: italic;
           }
           @font-face {
             font-family: 'Corbel';
-            src: url('/fonts/Corbel/corbelz.ttf') format('truetype');
+            src: url('${getAssetPath('/fonts/Corbel/corbelz.ttf')}') format('truetype');
             font-weight: 900;
             font-style: normal;
           }

@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
   },
   basePath: isProd && isGitHubPages ? '/studiovistara' : '',
   assetPrefix: isProd && isGitHubPages ? '/studiovistara/' : '',
+  env: {
+    ASSET_PREFIX: isProd && isGitHubPages ? '/studiovistara' : '',
+  },
 };
 
 export default nextConfig;
