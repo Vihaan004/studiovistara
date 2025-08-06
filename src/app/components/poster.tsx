@@ -4,7 +4,7 @@ import '../styles/poster.css';
 import { useState, useEffect } from 'react';
 import { useTransition } from '../contexts/TransitionContext';
 import { usePathname } from 'next/navigation';
-import { getAssetPath } from '../utils/paths';
+import { getAssetPath, getNavigationPath, isHomePage as isHomePageUtil } from '../utils/paths';
 
 interface PosterProps {
   isTransitioning?: boolean;
@@ -15,8 +15,8 @@ export default function Poster({ isTransitioning = false }: PosterProps) {
   const { navigateWithTransition } = useTransition();
   const pathname = usePathname();
   
-  // Check if we're on the home page
-  const isHomePage = pathname === '/';
+  // Check if we're on the home page using utility function
+  const isHomePage = isHomePageUtil(pathname);
 
   useEffect(() => {
     if (isTransitioning) {
@@ -42,15 +42,18 @@ export default function Poster({ isTransitioning = false }: PosterProps) {
   const shouldShowShrunk = !isHomePage || shouldTransition;
 
   const handleNavigation = (path: string) => {
+    const fullPath = getNavigationPath(path);
+    
     // Don't trigger transition if we're already on the target page
-    if (pathname === path) return;
+    if (pathname === path || pathname === fullPath) return;
     
     // If we're on home page, use transition; otherwise navigate directly
     if (isHomePage) {
+      // Pass original path to router (it handles basePath automatically)
       navigateWithTransition(path);
     } else {
-      // Direct navigation for non-home pages
-      window.location.href = path;
+      // For direct navigation, use the full path
+      window.location.href = fullPath;
     }
   };
 

@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
+import { isHomePage as isHomePageUtil } from '../utils/paths';
 
 interface TransitionContextType {
   isTransitioning: boolean;
@@ -18,7 +19,7 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
 
   // Reset transition state when navigating to home page
   useEffect(() => {
-    if (pathname === '/') {
+    if (isHomePageUtil(pathname)) {
       setIsTransitioning(false);
     }
   }, [pathname]);
@@ -28,6 +29,7 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
     
     // Wait for transition to complete, then navigate
     setTimeout(() => {
+      // Use router.push which handles the basePath automatically
       router.push(path);
     }, 800); // Match the CSS transition duration
   };
