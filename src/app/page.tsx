@@ -2,14 +2,14 @@ import './styles/page.css';
 import Stripes from './components/stripes'
 import Poster from './components/poster'
 import Gallery from './components/gallery'
-import Content from './components/content';
+import Home from './components/home';
 
-export default function Home() {
+export default function Page() {
   return (
-    <div>
+    <div className='wrapper'>
       <Poster />
       {/* <Stripes /> */}
-      <Content />
+      <Home />
     </div>
   );
 }

@@ -2,27 +2,13 @@ import '../styles/poster.css';
 
 export default function Poster() {
   return (
-    <div className="poster-container">
+    <div className='poster-main'>
+        <div className="poster-container poster-bg">
         {/* <video className="background-video" autoPlay muted loop playsInline>
             <source src="/videos/Poster-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video> */}
-        <img
-            className="background-image"
-            src="/images/titlecard.jpeg"
-            alt="Studio Vistara Title Card Background"
-            style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                zIndex: -10,
-                pointerEvents: 'none',
-                filter: 'brightness(0.5)',
-            }}
-        />
+        
         <div className='title'>
             studiovistara
         </div>
@@ -61,6 +47,15 @@ export default function Poster() {
                 </a>
             </div>
         </div>
+    </div>
+    
+    <div className='navbar'>
+        <p>TEAM</p>
+        <p>PROJECTS</p>
+        <p>BLOG</p>
+        <p>TESTIMONIALS</p>
+        <p>CONTACT</p>
+    </div>
     </div>
   );
 }

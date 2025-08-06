@@ -1,18 +1,10 @@
-import '../styles/content.css';
+import '../styles/home.css';
 
-export default function Content() {
+export default function Home() {
   return (
-    <div className='content-section'>
-      
-        <div className='navbar'>
-            <p>THE TEAM</p>
-            <p>PROJECTS</p>
-            <p>BLOG</p>
-            <p>TESTIMONIALS</p>
-            <p>CONTACT</p>
-        </div>
+    <div className='home-section'>
 
-        <div className='content-1'>
+        <div className='home-1'>
             <div className='quote'>
                 <p>Society needs a good image of itself. That is the job of the Architect.</p>
                 <p className='author'>— Walter Gropius</p>

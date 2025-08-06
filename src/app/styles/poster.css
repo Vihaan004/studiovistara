@@ -1,10 +1,37 @@
+ .poster-main {
+    height: 285px
+ }
+ 
  .poster-container {
     position: relative;
+    /* top: 0;
+    left: 0; */
+    /* height: 40vh; */
+    /* height: 230px; */
+    padding: 30px 30px 50px 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.poster-bg {
+    background-image: url('/images/titlecard.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.poster-bg::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
-    /* height: 40vh; */
-    height: 225px;
-    overflow: hidden;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
 }
 
 .background-video {
@@ -18,11 +45,12 @@
 }
 
 .title {
-    opacity: 0.8;
+    /* opacity: 0.8; */
     /* filter: blur(0.4px); */
-    position: absolute;
+    /* position: absolute;
     top: 30;
-    left: 60;
+    left: 60; */
+    z-index: 1;
     height: 150px;
     width: 330px;
     border-bottom: 10px solid white;
@@ -64,9 +92,10 @@
 .about {
     position: absolute;
     top: 190px;
-    left: 285px;
+    left: 270px;
     /* width: 300px; */
     /* padding: 20px; */
+    z-index: 1;
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
     letter-spacing: 2px;
@@ -86,12 +115,13 @@
 .info {
     /* opacity: 0.8; */
     /* filter: blur(0.4px); */
-    position: absolute;
+    /* position: absolute;
     bottom: 10;
-    right: 30;
+    right: 30; */
     /* width: 400px; */
     /* border-bottom: 30px solid white; */
-    border-top: 30px solid white;
+    z-index: 1;
+    border-top: 20px solid white;
     padding: 0 0px 10px 0px;
     color: white;
     font-size: 0.85rem;
@@ -126,4 +156,28 @@
     align-items: center;
     width: 100%;
     margin-top: 12px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 45px;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    font-weight: 500;
+    color: black;
+    z-index: 10;
+    background-color: white;
+    padding: 15px 0;
+}
+
+.navbar p {
+    cursor: pointer;
+    transition: border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar p:hover {
+    border-bottom: 2px solid black;
 }
