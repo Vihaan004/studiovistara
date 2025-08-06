@@ -15,19 +15,6 @@ export function getAssetPath(path: string): string {
   return `${assetPrefix}${path}`;
 }
 
-export function getNavigationPath(path: string): string {
-  // For client-side, check if we're on GitHub Pages domain
-  if (typeof window !== 'undefined') {
-    const isOnGitHubPages = window.location.hostname === 'vihaan004.github.io';
-    if (isOnGitHubPages && !path.startsWith('/studiovistara')) {
-      return `/studiovistara${path}`;
-    }
-  }
-  
-  // For build-time (server-side)
-  return `${assetPrefix}${path}`;
-}
-
 export function isHomePage(pathname: string): boolean {
   // Handle both local development and GitHub Pages paths
   return pathname === '/' || pathname === '/studiovistara' || pathname === '/studiovistara/';

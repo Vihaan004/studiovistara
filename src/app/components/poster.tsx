@@ -3,8 +3,8 @@
 import '../styles/poster.css';
 import { useState, useEffect } from 'react';
 import { useTransition } from '../contexts/TransitionContext';
-import { usePathname } from 'next/navigation';
-import { getAssetPath, getNavigationPath, isHomePage as isHomePageUtil } from '../utils/paths';
+import { usePathname, useRouter } from 'next/navigation';
+import { getAssetPath, isHomePage as isHomePageUtil } from '../utils/paths';
 
 interface PosterProps {
   isTransitioning?: boolean;
@@ -14,6 +14,7 @@ export default function Poster({ isTransitioning = false }: PosterProps) {
   const [shouldTransition, setShouldTransition] = useState(false);
   const { navigateWithTransition } = useTransition();
   const pathname = usePathname();
+  const router = useRouter();
   
   // Check if we're on the home page using utility function
   const isHomePage = isHomePageUtil(pathname);
@@ -42,18 +43,16 @@ export default function Poster({ isTransitioning = false }: PosterProps) {
   const shouldShowShrunk = !isHomePage || shouldTransition;
 
   const handleNavigation = (path: string) => {
-    const fullPath = getNavigationPath(path);
-    
     // Don't trigger transition if we're already on the target page
-    if (pathname === path || pathname === fullPath) return;
+    if (pathname === path) return;
     
-    // If we're on home page, use transition; otherwise navigate directly
+    // If we're on home page, use smooth transition
     if (isHomePage) {
-      // Pass original path to router (it handles basePath automatically)
       navigateWithTransition(path);
     } else {
-      // For direct navigation, use the full path
-      window.location.href = fullPath;
+      // For sub-pages, navigate directly using Next.js router
+      // The router automatically handles the basePath
+      router.push(path);
     }
   };
 
