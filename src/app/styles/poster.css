@@ -27,7 +27,6 @@
 }
 
 .poster-bg {
-    background-image: url('/images/titlecard.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

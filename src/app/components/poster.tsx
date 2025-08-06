@@ -4,6 +4,7 @@ import '../styles/poster.css';
 import { useState, useEffect } from 'react';
 import { useTransition } from '../contexts/TransitionContext';
 import { usePathname } from 'next/navigation';
+import { getAssetPath } from '../utils/paths';
 
 interface PosterProps {
   isTransitioning?: boolean;
@@ -55,7 +56,12 @@ export default function Poster({ isTransitioning = false }: PosterProps) {
 
   return (
     <div className={`poster-main ${shouldShowShrunk ? 'transitioning' : ''}`}>
-        <div className={`poster-container poster-bg ${shouldShowShrunk ? 'shrunk' : ''}`}>
+        <div 
+          className={`poster-container poster-bg ${shouldShowShrunk ? 'shrunk' : ''}`}
+          style={{
+            backgroundImage: `url('${getAssetPath('/images/titlecard.jpeg')}')`
+          }}
+        >
         {/* <video className="background-video" autoPlay muted loop playsInline>
             <source src="/videos/Poster-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.

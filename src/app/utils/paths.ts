@@ -4,5 +4,13 @@ const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 export const assetPrefix = isProd && isGitHubPages ? '/studiovistara' : '';
 
 export function getAssetPath(path: string): string {
+  // For client-side, also check if we're on GitHub Pages domain
+  if (typeof window !== 'undefined') {
+    const isOnGitHubPages = window.location.hostname === 'vihaan004.github.io';
+    if (isOnGitHubPages && !path.startsWith('/studiovistara')) {
+      return `/studiovistara${path}`;
+    }
+  }
+  
   return `${assetPrefix}${path}`;
 }
