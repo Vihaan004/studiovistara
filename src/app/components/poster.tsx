@@ -33,25 +33,9 @@ export default function Poster({ isTransitioning = false }: PosterProps) {
   useEffect(() => {
     // Reset transition state when navigating to home page via browser back/forward
     if (isHomePage) {
-      // Force reset local state when on home page
-      const timer = setTimeout(() => {
-        setShouldTransition(false);
-      }, 50);
-      return () => clearTimeout(timer);
+      setShouldTransition(false);
     }
   }, [pathname, isHomePage]);
-
-  // Additional effect to handle browser navigation
-  useEffect(() => {
-    const handlePopState = () => {
-      if (window.location.pathname === '/') {
-        setShouldTransition(false);
-      }
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
 
   // If not on home page, show in shrunk state immediately
   // If on home page, only show shrunk if transitioning

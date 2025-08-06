@@ -19,32 +19,9 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
   // Reset transition state when navigating to home page
   useEffect(() => {
     if (pathname === '/') {
-      // Force reset with a small delay to ensure it takes effect
-      const timer = setTimeout(() => {
-        setIsTransitioning(false);
-      }, 50);
-      return () => clearTimeout(timer);
-    }
-  }, [pathname]);
-
-  // Handle browser navigation (back/forward buttons)
-  useEffect(() => {
-    const handlePopState = () => {
-      if (window.location.pathname === '/') {
-        setIsTransitioning(false);
-      }
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  // Also reset on component mount if we're on home page
-  useEffect(() => {
-    if (pathname === '/') {
       setIsTransitioning(false);
     }
-  }, []); // Run only on mount
+  }, [pathname]);
 
   const navigateWithTransition = (path: string) => {
     setIsTransitioning(true);
