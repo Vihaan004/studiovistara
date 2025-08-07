@@ -1,24 +1,20 @@
-import '../styles/content.css';
+import '../styles/home.css';
 
-export default function Content() {
+interface HomeProps {
+  isTransitioning?: boolean;
+}
+
+export default function Home({ isTransitioning = false }: HomeProps) {
   return (
-    <div className='content-section'>
-      
-        <div className='navbar'>
-            <p>THE TEAM</p>
-            <p>PROJECTS</p>
-            <p>BLOG</p>
-            <p>TESTIMONIALS</p>
-            <p>CONTACT</p>
-        </div>
+    <div className='home-section'>
 
-        <div className='content-1'>
-            <div className='quote'>
+        <div className='home-1'>
+            <div className={`quote ${isTransitioning ? 'hidden' : ''}`}>
                 <p>Society needs a good image of itself. That is the job of the Architect.</p>
                 <p className='author'>— Walter Gropius</p>
             </div>
-            <div className='subsidiaries'>
-                <div className='dot'></div>
+            <div className={`subsidiaries ${isTransitioning ? 'hidden' : ''}`}>
+                <div className={`dot ${isTransitioning ? 'hidden' : ''}`}></div>
                 <h1>associated verticals</h1>
                 <p>STUDIO<span className='orange-text'>WORX</span></p>
                 <p>STUDIO<span className='orange-text'>ESTATES</span></p>

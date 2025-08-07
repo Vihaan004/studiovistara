@@ -1,15 +1,20 @@
+'use client';
+
 import './styles/page.css';
 import Stripes from './components/stripes'
 import Poster from './components/poster'
 import Gallery from './components/gallery'
-import Content from './components/content';
+import Home from './components/home';
+import { useTransition } from './contexts/TransitionContext';
 
-export default function Home() {
+export default function Page() {
+  const { isTransitioning } = useTransition();
+
   return (
-    <div>
-      <Poster />
+    <div className='wrapper'>
+      <Poster isTransitioning={isTransitioning} />
       {/* <Stripes /> */}
-      <Content />
+      <Home isTransitioning={isTransitioning} />
     </div>
   );
 }

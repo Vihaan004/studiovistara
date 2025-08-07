@@ -1,29 +1,75 @@
-import '../styles/poster.css';
+'use client';
 
-export default function Poster() {
+import '../styles/poster.css';
+import { useState, useEffect } from 'react';
+import { useTransition } from '../contexts/TransitionContext';
+import { usePathname, useRouter } from 'next/navigation';
+import { getAssetPath, isHomePage as isHomePageUtil } from '../utils/paths';
+
+interface PosterProps {
+  isTransitioning?: boolean;
+}
+
+export default function Poster({ isTransitioning = false }: PosterProps) {
+  const [shouldTransition, setShouldTransition] = useState(false);
+  const { navigateWithTransition } = useTransition();
+  const pathname = usePathname();
+  const router = useRouter();
+  
+  // Check if we're on the home page using utility function
+  const isHomePage = isHomePageUtil(pathname);
+
+  useEffect(() => {
+    if (isTransitioning) {
+      // Small delay to ensure smooth transition
+      const timer = setTimeout(() => {
+        setShouldTransition(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    } else {
+      setShouldTransition(false);
+    }
+  }, [isTransitioning]);
+
+  useEffect(() => {
+    // Reset transition state when navigating to home page via browser back/forward
+    if (isHomePage) {
+      setShouldTransition(false);
+    }
+  }, [pathname, isHomePage]);
+
+  // If not on home page, show in shrunk state immediately
+  // If on home page, only show shrunk if transitioning
+  const shouldShowShrunk = !isHomePage || shouldTransition;
+
+  const handleNavigation = (path: string) => {
+    // Don't trigger transition if we're already on the target page
+    if (pathname === path) return;
+    
+    // If we're on home page, use smooth transition
+    if (isHomePage) {
+      navigateWithTransition(path);
+    } else {
+      // For sub-pages, navigate directly using Next.js router
+      // The router automatically handles the basePath
+      router.push(path);
+    }
+  };
+
   return (
-    <div className="poster-container">
+    <div className={`poster-main ${shouldShowShrunk ? 'transitioning' : ''}`}>
+        <div 
+          className={`poster-container poster-bg ${shouldShowShrunk ? 'shrunk' : ''}`}
+          style={{
+            backgroundImage: `url('${getAssetPath('/images/titlecard.jpeg')}')`
+          }}
+        >
         {/* <video className="background-video" autoPlay muted loop playsInline>
             <source src="/videos/Poster-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video> */}
-        <img
-            className="background-image"
-            src="/images/titlecard.jpeg"
-            alt="Studio Vistara Title Card Background"
-            style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                zIndex: -10,
-                pointerEvents: 'none',
-                filter: 'brightness(0.5)',
-            }}
-        />
-        <div className='title'>
+        
+        <div className={`title ${shouldShowShrunk ? 'shrunk' : ''}`} onClick={() => handleNavigation('/')}>
             studiovistara
         </div>
         {/* <div className='subtitle'>
@@ -32,16 +78,16 @@ export default function Poster() {
                 <p>MONA PATEL</p>
             </div>
         </div> */}
-        <div className='about'>
+        <div className={`about ${shouldShowShrunk ? 'hidden' : ''}`}>
             ABOUT US
         </div>
-        <div className='info'>
+        <div className={`info ${shouldShowShrunk ? 'compact' : ''}`}>
             {/* <p>SITE & CONTEXT EVALUATION • SPACE PROGRAMMING • DESIGN DEVELOPMENT • WORKING DRAWINGS & SPECIFICATIONS • DIGITAL 3D MODELING & SIMULATIONS • LANDSCAPE DESIGN • PROCESS ASSESSMENT • WORK SCHEDULING • COST ESTIMATION • PROJECT DELIVERY & COORDINATION • CONSTRUCTION • SITE SUPERVISION • DRAWINGS & SPECIFICATIONS • SERVICE STRUCTURE & MAINTENANCE GUIDELINES</p> */}
             {/* <p>SB-20, 'PRODUCTIVITY HOUSE' PRODUCTIVITY ROAD, ALKAPURI, BARODA 390007</p>
             <p>+91 0265 2359293 • +91 972979136</p>
             <p>info@studiovistara.com</p> */}
-            <div className='architecture'>ARCHITECTURE</div>
-            <div className='tags'>
+            <div className={`architecture ${shouldShowShrunk ? 'hidden' : ''}`}>ARCHITECTURE</div>
+            <div className={`tags ${shouldShowShrunk ? 'hidden' : ''}`}>
                 <p>BUILDING</p>
                 <p>INTERIOR</p>
                 <p>LANDSCAPE</p>
@@ -61,6 +107,15 @@ export default function Poster() {
                 </a>
             </div>
         </div>
+    </div>
+    
+    <div className='navbar'>
+        <p onClick={() => handleNavigation('/team')}>TEAM</p>
+        <p onClick={() => handleNavigation('/projects')}>PROJECTS</p>
+        <p onClick={() => handleNavigation('/blog')}>BLOG</p>
+        <p onClick={() => handleNavigation('/testimonials')}>TESTIMONIALS</p>
+        <p onClick={() => handleNavigation('/contact')}>CONTACT</p>
+    </div>
     </div>
   );
 }
