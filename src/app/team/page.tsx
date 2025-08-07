@@ -3,8 +3,29 @@
 import '../styles/page.css';
 import './team.css';
 import Poster from '../components/poster';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import teamMembersData from '../data/teamMembers.json';
+
+interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  profilePicture: string;
+}
 
 export default function TeamPage() {
+  const [hoveredMember, setHoveredMember] = useState<string | null>(null);
+  const [teamMembers] = useState<TeamMember[]>(teamMembersData);
+
+  const groupedMembers = teamMembers.reduce((acc, member) => {
+    if (!acc[member.role]) {
+      acc[member.role] = [];
+    }
+    acc[member.role].push(member);
+    return acc;
+  }, {} as Record<string, TeamMember[]>);
+
   return (
     <div className='wrapper'>
       <Poster />
@@ -12,73 +33,44 @@ export default function TeamPage() {
         {/* Team page content will go here */}
         <div className='team-wrapper'>
           <div className='grid'>
-            
+            {teamMembers.map((member) => (
+              <div 
+                key={member.id} 
+                className={`grid-item ${hoveredMember === member.id ? 'hovered' : ''}`}
+                onMouseEnter={() => setHoveredMember(member.id)}
+                onMouseLeave={() => setHoveredMember(null)}
+              >
+                <Image
+                  src={member.profilePicture}
+                  alt={member.name}
+                  width={150}
+                  height={150}
+                  className="member-image"
+                />
+              </div>
+            ))}
           </div>
 
 
 
           <div className='team'>
-            <div className='role-block'>
-              <div className='role'>FOUNDING ARCHITECT</div>
-              <div className='members'>
-                <p>INDRAKANT PATEL</p>
+            {Object.entries(groupedMembers).map(([role, members]) => (
+              <div key={role} className='role-block'>
+                <div className='role'>{role}</div>
+                <div className='members'>
+                  {members.map((member) => (
+                    <p 
+                      key={member.id}
+                      className={hoveredMember === member.id ? 'hovered' : ''}
+                      onMouseEnter={() => setHoveredMember(member.id)}
+                      onMouseLeave={() => setHoveredMember(null)}
+                    >
+                      {member.name}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            <div className='role-block'>
-              <div className='role'>PRINCIPAL ARCHITECT</div>
-              <div className='members'>
-                <p>TEJAS PATEL</p>
-              </div>
-            </div>
-
-            <div className='role-block'>
-              <div className='role'>PRINCIPAL INTERIOR DESIGNER</div>
-              <div className='members'>
-                <p>MONA PATEL</p>
-              </div>
-            </div>
-
-            <div className='role-block'>
-              <div className='role'>SENIOR ENGINEERS</div>
-              <div className='members'>
-                <p>JIGNESH SHAH</p>
-                <p>ROHIT HINGURAO</p>
-                <p>GOVIND DESAI</p>
-              </div>
-            </div>
-
-            <div className='role-block'>
-              <div className='role'>SENIOR ARCHITECT</div>
-              <div className='members'>
-                <p>MAYANK DUBEY</p>
-              </div>
-            </div>
-
-            <div className='role-block'>
-              <div className='role'>JUNIOR ARCHITECTS</div>
-              <div className='members'>
-                <p>NIMISHA SIHOTA</p>
-                <p>RINKAL KARAVADIA</p>
-                <p>VISHAL KHIMYANI</p>
-              </div>
-            </div>
-
-            <div className='role-block'>
-              <div className='role'>INTERNS</div>
-              <div className='members'>
-                <p>DHRUVI THAKKER</p>
-              </div>
-            </div>
-
-            <div className='role-block'>
-              <div className='role'>PEN-PUSHER</div>
-              <div className='members'>
-                <p>SANTOSH CHANDRATRE</p>
-              </div>
-            </div>
-
-
+            ))}
           </div>
         </div>
       </div>

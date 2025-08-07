@@ -1,0 +1,80 @@
+[
+  {
+    "id": "indrakant-patel",
+    "name": "INDRAKANT PATEL",
+    "role": "FOUNDING ARCHITECT",
+    "profilePicture": "/images/members/1.jpeg"
+  },
+  {
+    "id": "tejas-patel",
+    "name": "TEJAS PATEL",
+    "role": "PRINCIPAL ARCHITECT",
+    "profilePicture": "/images/members/2.jpeg"
+  },
+  {
+    "id": "mona-patel",
+    "name": "MONA PATEL",
+    "role": "PRINCIPAL INTERIOR DESIGNER",
+    "profilePicture": "/images/members/3.jpeg"
+  },
+  {
+    "id": "jignesh-shah",
+    "name": "JIGNESH SHAH",
+    "role": "SENIOR ENGINEERS",
+    "profilePicture": "/images/members/4.jpeg"
+  },
+  {
+    "id": "rohit-hingurao",
+    "name": "ROHIT HINGURAO",
+    "role": "SENIOR ENGINEERS",
+    "profilePicture": "/images/members/5.jpeg"
+  },
+  {
+    "id": "govind-desai",
+    "name": "GOVIND DESAI",
+    "role": "SENIOR ENGINEERS",
+    "profilePicture": "/images/members/6.jpeg"
+  },
+  {
+    "id": "mayank-dubey",
+    "name": "MAYANK DUBEY",
+    "role": "SENIOR ARCHITECT",
+    "profilePicture": "/images/members/7.jpeg"
+  },
+  {
+    "id": "nimisha-sihota",
+    "name": "NIMISHA SIHOTA",
+    "role": "JUNIOR ARCHITECTS",
+    "profilePicture": "/images/members/8.jpg"
+  },
+  {
+    "id": "rinkal-karavadia",
+    "name": "RINKAL KARAVADIA",
+    "role": "JUNIOR ARCHITECTS",
+    "profilePicture": "/images/members/9.jpeg"
+  },
+  {
+    "id": "vishal-khimyani",
+    "name": "VISHAL KHIMYANI",
+    "role": "JUNIOR ARCHITECTS",
+    "profilePicture": "/images/members/10.jpeg"
+  },
+  {
+    "id": "dhruvi-thakker",
+    "name": "DHRUVI THAKKER",
+    "role": "INTERNS",
+    "profilePicture": "/images/members/11.jpeg"
+  },
+  {
+    "id": "santosh-chandratre",
+    "name": "SANTOSH CHANDRATRE",
+    "role": "PEN-PUSHER",
+    "profilePicture": "/images/members/12.jpeg"
+  },
+  {
+    "id": "sanjay-patel",
+    "name": "SANJAY PATEL",
+    "role": "PEN-PUSHER",
+    "profilePicture": "/images/members/13.jpeg"
+  }
+]
