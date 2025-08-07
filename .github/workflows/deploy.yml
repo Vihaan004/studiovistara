@@ -2,7 +2,7 @@ name: Deploy Next.js to GitHub Pages
 
 on:
   push:
-    branches: [ transitions ]  # Deploy when pushing to transitions branch
+    branches: [ main ]  # Deploy when pushing to main branch
 
 permissions:
   contents: read

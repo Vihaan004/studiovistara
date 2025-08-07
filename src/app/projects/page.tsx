@@ -9,6 +9,7 @@ export default function ProjectsPage() {
       <Poster />
       <div className="page-content">
         {/* Projects page content will go here */}
+        
       </div>
     </div>
   );
