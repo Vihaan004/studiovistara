@@ -1,73 +1,50 @@
-.team-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 0;
+.team-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: right; */
 }
 
-.team-container h1 {
-    font-size: 2.5rem;
-    font-family: 'Corbel', sans-serif;
+.grid {
+    /* border: 1px solid black; */
+    width: auto;
+    height: 500px;
+    margin: 50px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    /* border: 1px solid black; */
+    margin: 50px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
     font-weight: 300;
     letter-spacing: 2px;
-    margin-bottom: 20px;
-    color: #333;
+    gap: 20px;
+    cursor: default;
 }
 
-.team-container > p {
-    font-size: 1.1rem;
-    color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 50px;
-    letter-spacing: 1px;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
-}
-
-.team-member {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.member-photo-placeholder {
-    width: 200px;
-    height: 200px;
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    margin: 0 auto 20px;
+.role-block {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 0.9rem;
-    position: relative;
+    flex-direction: row;
+    /* align-items: flex-start; */
+    justify-content: space-between;
 }
 
-.member-photo-placeholder::before {
-    content: 'Photo';
+.role {
+    margin-top: 5px;
 }
 
-.team-member h3 {
-    font-size: 1.3rem;
-    font-family: 'Corbel', sans-serif;
-    font-weight: 400;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.team-member p {
+.members {
     font-size: 1rem;
-    color: rgba(0, 0, 0, 0.6);
-    letter-spacing: 1px;
+    font-weight: 400;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.members p:hover {
+    color: #cc6600;
+    transition: color 0.3s;
 }
