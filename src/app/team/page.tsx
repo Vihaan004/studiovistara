@@ -18,6 +18,8 @@ export default function TeamPage() {
   const [hoveredMember, setHoveredMember] = useState<string | null>(null);
   const [teamMembers] = useState<TeamMember[]>(teamMembersData);
 
+  const assetPrefix = process.env.ASSET_PREFIX || '';
+
   const groupedMembers = teamMembers.reduce((acc, member) => {
     if (!acc[member.role]) {
       acc[member.role] = [];
@@ -41,7 +43,7 @@ export default function TeamPage() {
                 onMouseLeave={() => setHoveredMember(null)}
               >
                 <Image
-                  src={member.profilePicture}
+                  src={`${assetPrefix}${member.profilePicture}`}
                   alt={member.name}
                   width={150}
                   height={150}
