@@ -1,41 +1,97 @@
 [
   {
-    "id": "villa-sunrise",
-    "name": "Villa Sunrise",
-    "category": "Residential",
-    "practices": ["architecture", "landscape"],
-    "location": "Baroda, Gujarat",
-    "date": "2023-09-15",
-    "description": "A modern villa design that captures the essence of sunrise with its east-facing orientation and warm material palette.",
+    "id": "courtyard-housing-complex",
+    "name": "Courtyard Housing Complex",
+    "category": "Housing",
+    "practices": [
+      "Architecture",
+      "Landscape"
+    ],
+    "location": "Ahmedabad, Gujarat",
+    "year": 2024,
+    "description": "A thoughtfully designed housing complex centered around shared courtyards that promote community interaction and natural ventilation.",
     "coverImage": "0.jpg",
-    "images": ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg"],
-    "hasDescription": true,
-    "status": "completed"
+    "images": [
+      "0.jpg",
+      "1.jpg",
+      "2.jpg"
+    ],
+    "status": "completed",
+    "hasDescription": true
+  },
+  {
+    "id": "green-office-complex",
+    "name": "Green Office Complex",
+    "category": "Commerical",
+    "practices": [
+      "Architecture",
+      "Landscape"
+    ],
+    "location": "Pune, Maharashtra",
+    "year": 2024,
+    "description": "Sustainable office complex featuring green roofs, natural ventilation, and rainwater harvesting systems.",
+    "coverImage": "0.jpg",
+    "images": [
+      "0.jpg"
+    ],
+    "status": "completed",
+    "hasDescription": true
+  },
+  {
+    "id": "heritage-boutique-hotel",
+    "name": "Heritage Boutique Hotel",
+    "category": "Commercial",
+    "practices": [
+      "Architecture",
+      "Interior"
+    ],
+    "location": "Jaipur, Rajasthan",
+    "year": 2023,
+    "description": "Adaptive reuse of a 19th-century haveli transformed into a luxury boutique hotel that celebrates Rajasthani architectural heritage.",
+    "coverImage": "0.jpg",
+    "images": [
+      "0.jpg",
+      "1.jpg"
+    ],
+    "status": "completed",
+    "hasDescription": true
   },
   {
     "id": "urban-loft-renovation",
     "name": "Urban Loft Renovation",
     "category": "Residential",
-    "practices": ["interior", "architecture"],
+    "practices": [
+      "Interior",
+      "Architecture"
+    ],
     "location": "Mumbai, Maharashtra",
-    "date": "2023-12-01",
+    "year": 2023,
     "description": "Complete renovation of a 1920s industrial loft into a contemporary urban living space.",
     "coverImage": "0.jpg",
-    "images": ["0.jpg", "1.jpg", "2.jpg"],
-    "hasDescription": true,
-    "status": "completed"
+    "images": [
+      "0.jpg"
+    ],
+    "status": "completed",
+    "hasDescription": true
   },
   {
-    "id": "green-office-complex",
-    "name": "Green Office Complex",
-    "category": "Commercial",
-    "practices": ["architecture", "landscape"],
-    "location": "Pune, Maharashtra",
-    "date": "2024-02-20",
-    "description": "Sustainable office complex featuring green roofs, natural ventilation, and rainwater harvesting systems.",
+    "id": "villa-sunrise",
+    "name": "Villa Sunrise",
+    "category": "Residential",
+    "practices": [
+      "Architecture",
+      "Landscape"
+    ],
+    "location": "Baroda, Gujarat",
+    "year": 2023,
+    "description": "A modern villa design that captures the essence of sunrise with its east-facing orientation and warm material palette.",
     "coverImage": "0.jpg",
-    "images": ["0.jpg"],
-    "hasDescription": false,
-    "status": "completed"
+    "images": [
+      "0.jpg",
+      "1.jpg",
+      "2.jpg"
+    ],
+    "status": "completed",
+    "hasDescription": true
   }
 ]

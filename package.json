@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "npm run generate-projects && next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "npm run generate-projects && next build && next export",
+    "generate-projects": "node scripts/generateProjectsJson.js"
   },
   "dependencies": {
     "react": "19.1.0",

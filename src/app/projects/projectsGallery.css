@@ -40,50 +40,87 @@
   flex-direction: column;
   gap: 20px;
   margin-bottom: 30px;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 4px;
+  padding: 20px 0;
 }
 
 .filters {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .filter-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  min-width: 150px;
+  position: relative;
+  width: 200px;
 }
 
-.filter-group label {
-  font-size: 0.8rem;
+.custom-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-button {
+  border: 1px solid black;
+  padding: 12px 16px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.dropdown-button:hover {
+  background-color: #f9f9f9;
+}
+
+.dropdown-label {
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #666;
+  /* color: #666; */
+  line-height: 1;
 }
 
-.filter-group select {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  background-color: white;
+.dropdown-value {
+  font-size: 0.7rem;
+  /* color: #333; */
+  font-weight: 300;
+  line-height: 1;
+  font-family: 'Corbel', sans-serif;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid black;
+  border-top: none;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  font-family: 'Corbel', sans-serif;
+}
+
+.dropdown-option {
+  padding: 10px 16px;
+  font-size: 0.7rem;
+  color: #333;
   cursor: pointer;
-  transition: border-color 0.3s ease;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #eee;
 }
 
-.filter-group select:hover {
-  border-color: #999;
+.dropdown-option:last-child {
+  border-bottom: none;
 }
 
-.filter-group select:focus {
-  outline: none;
-  border-color: #333;
+.dropdown-option:hover {
+  background-color: #f0f0f0;
 }
 
 .results-count {
@@ -96,22 +133,17 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  /* gap: 20px; */
+  /* margin-top: 10px; */
 }
 
 .project-card {
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   overflow: hidden;
   background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .project-image {
@@ -124,36 +156,22 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-.project-card:hover .cover-image {
-  transform: scale(1.05);
-}
-
-.project-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-  color: white;
-  padding: 20px;
-  transform: translateY(10px);
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.project-card:hover .project-overlay {
-  transform: translateY(0);
-  opacity: 1;
+.project-info {
+  padding: 15px 0px;
+  background: white;
+  font-family: 'Corbel', sans-serif;
 }
 
 .project-info h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 8px;
-  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  /* margin-bottom: 8px; */
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .project-category {
@@ -167,7 +185,14 @@
 .project-location {
   font-size: 0.85rem;
   color: #eee;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+}
+
+.project-year {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: #666;
+  margin-bottom: 0;
 }
 
 .project-practices {
@@ -183,7 +208,6 @@
   color: white;
   padding: 2px 8px;
   border-radius: 12px;
-  text-transform: lowercase;
   letter-spacing: 0.5px;
 }
 
@@ -223,11 +247,7 @@
     gap: 15px;
   }
   
-  .project-overlay {
-    position: static;
-    background: rgba(0, 0, 0, 0.8);
-    transform: none;
-    opacity: 1;
-    padding: 15px;
+  .project-info {
+    padding: 12px 15px;
   }
 }

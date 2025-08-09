@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import '../styles/page.css';
-import '../styles/projectsGallery.css';
+import './projectsGallery.css';
 import Poster from '../components/poster';
-import ProjectsGallery from '../components/projectsGallery';
+import ProjectsGallery from './projectsGallery';
+import { fetchAllProjects } from '../utils/markdownParser';
 
 interface Project {
   id: string;
@@ -12,7 +13,7 @@ interface Project {
   category: 'Residential' | 'Housing' | 'Commercial';
   practices: string[];
   location: string;
-  date: string;
+  year: number;
   description: string;
   coverImage: string;
   images: string[];
@@ -27,8 +28,7 @@ export default function ProjectsPage() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('/projects.json');
-        const projectsData: Project[] = await response.json();
+        const projectsData = await fetchAllProjects();
         setProjects(projectsData);
       } catch (error) {
         console.error('Error fetching projects:', error);
@@ -45,10 +45,10 @@ export default function ProjectsPage() {
       <Poster />
       <div className="page-content">
         <div className="projects-page">
-          <div className="page-header">
+          {/* <div className="page-header">
             <h1>Our Projects</h1>
             <p>Explore our diverse portfolio of architectural works across residential, housing, and commercial projects.</p>
-          </div>
+          </div> */}
           
           {loading ? (
             <div className="loading-projects">Loading projects...</div>
