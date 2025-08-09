@@ -105,7 +105,7 @@ export default function ProjectsGallery({ projects }: ProjectsGalleryProps) {
         setSelectedLocation(value);
         break;
       case 'sort':
-        setSortBy(value as any);
+        setSortBy(value as 'date-desc' | 'date-asc' | 'name-asc' | 'name-desc');
         break;
     }
     setOpenDropdown(null);

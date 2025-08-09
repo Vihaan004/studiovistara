@@ -40,7 +40,7 @@
   flex-direction: column;
   gap: 20px;
   margin-bottom: 30px;
-  padding: 20px 0;
+  padding: 0 0 20px 0;
 }
 
 .filters {

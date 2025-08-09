@@ -56,9 +56,10 @@
 }
 
 .orange-text {
-    padding-left: 4px;
+    padding-left: 3px;
     color: rgba(0, 0, 0, 0.7);
     transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 .subsidiaries p {
@@ -73,7 +74,7 @@
 }
 
 .subsidiaries p:hover .orange-text {
-    color: #cc6600;
+    color: #d25400;
 }
 
 .subsidiaries {

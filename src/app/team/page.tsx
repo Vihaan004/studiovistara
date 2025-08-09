@@ -3,7 +3,7 @@
 import '../styles/page.css';
 import './team.css';
 import Poster from '../components/poster';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import teamMembersData from '../data/teamMembers.json';
 

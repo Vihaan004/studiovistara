@@ -86,11 +86,11 @@
 }
 
 .members p:hover {
-    color: #cc6600;
+    color: #d25400;
     transition: color 0.3s;
 }
 
 .members p.hovered {
-    color: #cc6600;
+    color: #d25400;
     transition: color 0.3s;
 }

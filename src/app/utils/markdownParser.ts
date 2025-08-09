@@ -29,7 +29,7 @@ export function parseMarkdownWithFrontmatter(markdownContent: string): ParsedMar
   const content = parts.slice(2).join('---').trim();
 
   // Parse YAML frontmatter manually (basic implementation)
-  const metadata: any = {};
+  const metadata: Record<string, string | string[] | number | boolean> = {};
   const lines = frontmatterText.split('\n');
   
   let currentKey = '';
